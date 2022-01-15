@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .navbar-box {
   max-width: 1440px;
@@ -23,9 +23,9 @@ h3 {
   font-weight: 700;
 }
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin: 0 auto;
   height: 90px;
 }
 .menu-box {
@@ -75,6 +75,11 @@ nav {
   line-height: 24px;
   cursor: pointer;
 }
+.btn-primary:hover {
+  background-color: black;
+  color: #fff;
+  transition: 0.5s linear;
+}
 .header-right {
   display: flex;
   justify-content: center;
@@ -82,7 +87,197 @@ nav {
 }
 
 /*--------- Content Styles ----------*/
+#content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 30px;
+}
+.arrow a {
+  display: flex;
+  float: right;
+  align-items: center;
+  margin: 0 auto;
+  text-decoration: none;
+  gap: 5px;
+  color: #e02c6d;
+}
 .content-title h2 {
   font-size: 28px;
   font-weight: 600;
+}
+.content-title {
+  text-align: center;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  transform: translateY(30px);
+  gap: 30px;
+  margin-bottom: 80px;
+}
+.product {
+  width: 330px;
+  height: 475px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 16px 15px 16px 15px;
+}
+.details {
+  margin-top: 16px;
+}
+.details p {
+  margin-top: 6px;
+}
+.details i {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: rgb(243, 199, 56);
+}
+
+.contact {
+  margin-bottom: 100px;
+}
+.contact .text-form {
+  justify-content: center;
+}
+.text-form h1 {
+  text-align: center;
+  margin-top: 150px;
+}
+.contact form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact form input {
+  width: 50%;
+  margin: 5px 0;
+  padding: 10px 0;
+}
+.contact textarea {
+  width: 50%;
+  height: 150px;
+  padding: 12px 20px;
+  border: 1px solid #e02c6d;
+  font-size: 12px;
+  resize: none;
+  color: #ccc;
+  margin: 12px 0;
+  font-family: "Inter", sans-serif;
+}
+
+/*---------- Footer Styles ----------*/
+footer {
+  width: 100%;
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+  align-items: center;
+  padding: 16px 15px 16px 15px;
+  margin: 100px 0 0 0;
+  margin: auto;
+  background-color: #0a0826;
+}
+footer div {
+  color: #fff;
+}
+.copyright {
+  text-align: center;
+}
+.copyright p {
+  margin: 0 0 5px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+.copyright small {
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  line-height: 1.5rem;
+}
+.footer-icon {
+  margin-top: 10px;
+}
+.footer-icon a {
+  color: #fff;
+  margin: 0 15px;
+}
+
+/*------- Media Query --------*/
+/*------- Mobile Devices ------*/
+@media (min-width: 425px) and (max-width: 768px) {
+  .header-box {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  nav {
+    display: inline-block;
+  }
+  .menu-box {
+    display: none;
+  }
+  .header-left {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin: auto;
+  }
+  .header-left h1 {
+    font-size: 44px;
+  }
+  .header-left p {
+    font-size: 14px;
+  }
+  .btn-primary {
+    margin: 0 auto;
+    width: 50%;
+  }
+  .header-right {
+    margin: 30px 0 30px 0;
+  }
+  .content-title h2 {
+    padding: 20px 0;
+  }
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+  .copyright p {
+    font-size: 16px;
+  }
+  .copyright small {
+    font-size: 12px;
+  }
+}
+
+/*---------- Tablet Devices ----------*/
+@media (max-width: 1100px) {
+  .menu-box {
+    display: none;
+  }
+  .header-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-left {
+    margin: auto;
+  }
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  footer {
+    margin: 0 auto;
+    position: absolute;
+  }
 }
